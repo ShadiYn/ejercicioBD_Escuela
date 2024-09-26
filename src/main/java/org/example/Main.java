@@ -1,6 +1,9 @@
 package org.example;
 
+import com.mysql.cj.protocol.x.Notice;
+
 import java.util.List;
+import java.util.Objects;
 import java.util.Scanner;
 
 public class Main {
@@ -8,6 +11,7 @@ public class Main {
 
         Servicio servicio = new Servicio();
         Scanner e = new Scanner(System.in);
+        Profesor profesor = new Profesor();
         int opcion = 0;
         do {
 
@@ -27,19 +31,37 @@ public class Main {
                     }
                     break;
                 case 2:
+                    List<Profesor> result = servicio.mostrarNombreYapellido();
+                    for(Profesor r : result){
+                        System.out.println("NOMBRE: "+r.getNombre()+" Apellido: "+r.getApellido());
+                    }
                     break;
                 case 3:
+                    List<Profesor> resultado = servicio.Ejercicio3();
+                    for(Profesor r : resultado){
+                        System.out.println("NOMBRE: "+r.getNombre()+" Apellido: "+r.getEdad()+"Años experiencia: "+r.getA_Experiencia());
+                    }
                     break;
                 case 4:
+                    List<Profesor> R2 = servicio.Ejercicio4();
+                    for(Profesor r : R2){
+                        System.out.println("NOMBRE: "+r.getNombre()+" Apellido: "+r.getEdad()+"Años experiencia: "+r.getA_Experiencia());
+                    }
                     break;
                 case 5:
+                    List<Profesor> R3 = servicio.Ejercicio5();
+                    for(Profesor r : R3){
+                        System.out.println("nombre: "+r.getNombre()+"  letras:"+r.getNombre().length());
+                    }
                     break;
                 case 6:
+
                     break;
                 case 7:
+
                     break;
             }
-        }while(opcion!=5);
+        }while(opcion!=0);
 
 
 
